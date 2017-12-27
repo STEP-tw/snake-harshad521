@@ -9,18 +9,27 @@ const isGameOver = function(position){
 };
 
 const alertGameOver = function() {
+  displayGameOver();
+  activateButton();
+  killSnake();
+}
+
+const displayGameOver = function functionName() {
   let scoreBoard = document.getElementById('_scoreBoard');
   scoreBoard.innerText=`Game Over!`
+}
+
+const activateButton = function() {
   let restart = document.getElementById('restart');
   restart.style.visibility="visible";
   restart.onclick=function(){location.reload();};
-  killSnake();
 }
 
 const killSnake = function() {
   snake.body = [];
   snake.head = {};
 }
+
 const hasSnakeEatenItself = function functionName(head) {
   return snake.body.some(function(bodyPart){
     let condition1 = bodyPart.x == head.x;
