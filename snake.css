@@ -24,3 +24,16 @@
   background-color: blue;
   border-radius: 50%;
 }
+
+.scoreBoard {
+  font-family: sans-serif;
+  font-display: block;
+  font-size: 25px;
+  color: black;
+}
+
+
+button {
+  font-size: 20px;
+  visibility: hidden;
+}

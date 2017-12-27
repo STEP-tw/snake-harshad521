@@ -7,3 +7,19 @@ const isGameOver = function(position){
   let condition2= !isInRange(-1,60,position.y);
   return condition1 || condition2;
 };
+
+const alertGameOver = function() {
+  let scoreBoard = document.getElementById('_scoreBoard');
+  scoreBoard.innerText=`Game Over!`
+  let restart = document.getElementById('restart');
+  restart.style.visibility="visible";
+  restart.onclick=function(){location.reload();};
+}
+
+const hasSnakeEatenItself = function functionName(head) {
+  return snake.body.some(function(bodyPart){
+    let condition1 = bodyPart.x == head.x;
+    let condition2 = bodyPart.y == head.y;
+    return condition1 && condition2;
+  });
+}

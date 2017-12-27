@@ -1,3 +1,4 @@
+
 let snake=undefined;
 let food=undefined;
 let numberOfRows=60;
@@ -6,6 +7,12 @@ let numberOfCols=120;
 let animator=undefined;
 
 const animateSnake=function() {
+  let gameOver = isGameOver(snake.getHead());
+  let snakeEatenItself = hasSnakeEatenItself(snake.getHead());
+  if(gameOver || snakeEatenItself){
+    alertGameOver();
+    return;
+  }
   let oldHead=snake.getHead();
   let oldTail=snake.move();
   let head=snake.getHead();
@@ -18,7 +25,6 @@ const animateSnake=function() {
     drawFood(food);
   }
 }
-
 const changeSnakeDirection=function(event) {
   switch (event.code) {
     case "KeyA":
