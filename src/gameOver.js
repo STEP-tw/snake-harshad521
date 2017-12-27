@@ -16,6 +16,10 @@ const alertGameOver = function() {
   restart.onclick=function(){location.reload();};
 }
 
+const killSnake = function() {
+  snake.body = [];
+  snake.head = {};
+}
 const hasSnakeEatenItself = function functionName(head) {
   return snake.body.some(function(bodyPart){
     let condition1 = bodyPart.x == head.x;
