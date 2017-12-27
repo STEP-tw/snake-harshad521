@@ -14,6 +14,7 @@ const alertGameOver = function() {
   let restart = document.getElementById('restart');
   restart.style.visibility="visible";
   restart.onclick=function(){location.reload();};
+  killSnake();
 }
 
 const killSnake = function() {

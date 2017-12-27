@@ -7,14 +7,14 @@ let numberOfCols=120;
 let animator=undefined;
 
 const animateSnake=function() {
+  let oldHead=snake.getHead();
+  let oldTail=snake.move();
   let gameOver = isGameOver(snake.getHead());
   let snakeEatenItself = hasSnakeEatenItself(snake.getHead());
   if(gameOver || snakeEatenItself){
     alertGameOver();
     return;
   }
-  let oldHead=snake.getHead();
-  let oldTail=snake.move();
   let head=snake.getHead();
   paintBody(oldHead);
   unpaintSnake(oldTail);
