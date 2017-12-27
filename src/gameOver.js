@@ -2,7 +2,7 @@ const isInRange = function(lowerLimit,upperLimit,number){
   return number>lowerLimit&&number<upperLimit;
 };
 
-const isGameOver = function(position){
+const isOutOfArea = function(position){
   let condition1= !isInRange(-1,120,position.x);
   let condition2= !isInRange(-1,60,position.y);
   return condition1 || condition2;
@@ -36,4 +36,9 @@ const hasSnakeEatenItself = function functionName(head) {
     let condition2 = bodyPart.y == head.y;
     return condition1 && condition2;
   });
+}
+
+const isGameOver=function () {
+  let head = snake.getHead();
+  return hasSnakeEatenItself(head) || isOutOfArea(head);
 }

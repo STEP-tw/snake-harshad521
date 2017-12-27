@@ -9,13 +9,11 @@ let animator=undefined;
 const animateSnake=function() {
   let oldHead=snake.getHead();
   let oldTail=snake.move();
-  let gameOver = isGameOver(snake.getHead());
-  let snakeEatenItself = hasSnakeEatenItself(snake.getHead());
-  if(gameOver || snakeEatenItself){
+  let head=snake.getHead();
+  if(isGameOver()){
     alertGameOver();
     return;
   }
-  let head=snake.getHead();
   paintBody(oldHead);
   unpaintSnake(oldTail);
   paintHead(head);
